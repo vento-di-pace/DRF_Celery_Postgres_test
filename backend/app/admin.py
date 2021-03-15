@@ -1,5 +1,5 @@
 from django.contrib import admin
-from HoodiesTestProject.app.models import Page, Content, Video, Audio, Text
+from backend.app.models import Page, Content, Video, Audio, Text
 # Register your models here.
 
 # class PageAdmin(admin.ModelAdmin):

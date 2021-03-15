@@ -1,5 +1,5 @@
 from django.db import models
-import HoodiesTestProject.settings as settings
+import backend.settings as settings
 
 # Create your models here.
 

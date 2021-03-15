@@ -1,4 +1,4 @@
-"""HoodiesTestProject URL Configuration
+"""backend URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -16,16 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from HoodiesTestProject.app import views
+from backend.app import views
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'pages', views.PageViewSet)
 router.register(r'content', views.ContentViewSet)
+router.register(r'video', views.VideoViewSet)
+router.register(r'audio', views.AudioViewSet)
+router.register(r'text', views.TextViewSet)
+
+# router.register(r'video', views.VideoViewSet)
+# router.register(r'audio', views.ContentViewSet)
+# router.register(r'text', views.ContentViewSet)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('', path(views.PageViewSet.as_view())),
     # path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path(r'api/', include(router.urls))
 ]

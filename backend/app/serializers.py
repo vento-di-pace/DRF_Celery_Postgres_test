@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from HoodiesTestProject.app.models import Page, Content, Video, Audio, Text
+from backend.app.models import Page, Content, Video, Audio, Text
 
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
@@ -40,9 +40,9 @@ class TextSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class ContentSerializer(serializers.HyperlinkedModelSerializer):
-    # video = VideoSerializer()
-    # audio = AudioSerializer()
-    # text = TextSerializer()
+    video = VideoSerializer()
+    audio = AudioSerializer()
+    text = TextSerializer()
     class Meta:
         model = Content
         fields = '__all__'

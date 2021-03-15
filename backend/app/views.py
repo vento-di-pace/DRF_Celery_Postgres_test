@@ -5,8 +5,9 @@ from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
 from rest_framework import permissions
 from celery import shared_task
-from HoodiesTestProject.app.models import Page, Content
-from HoodiesTestProject.app.serializers import UserSerializer, GroupSerializer, PageSerializer, ContentSerializer
+from backend.app.models import Page, Content, Video, Audio, Text
+from backend.app.serializers import UserSerializer, GroupSerializer, PageSerializer, ContentSerializer
+from backend.app.serializers import VideoSerializer, AudioSerializer, TextSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -35,3 +36,18 @@ class PageViewSet(viewsets.ModelViewSet):
 class ContentViewSet(viewsets.ModelViewSet):
     queryset = Content.objects.all()
     serializer_class = ContentSerializer
+
+
+class VideoViewSet(viewsets.ModelViewSet):
+    queryset = Video.objects.all()
+    serializer_class = VideoSerializer
+
+
+class AudioViewSet(viewsets.ModelViewSet):
+    queryset = Audio.objects.all()
+    serializer_class = AudioSerializer
+
+
+class TextViewSet(viewsets.ModelViewSet):
+    queryset = Text.objects.all()
+    serializer_class = TextSerializer
